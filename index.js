@@ -54,15 +54,16 @@ function clearInputValues() {
 
   var inputElems = document.getElementsByClassName('text-input-element');
  
-	console.log("elems:", inputElems.length);	
+  var inputElems = document.getElementsByClassName('text-input-element');
   for (var i = 0; i < inputElems.length; i++) {
-    
-	var input = inputElems[i].getElementsByTagName('input');
-	  console.log(input);
-	for(var j = 0; j < input.length; j++){
-		input.checked = false;	//Clear radio button
-		input.value = '';	//Clear text input
-	}
+    var input = inputElems[i].querySelector('input[type=text], textarea');
+	  if(input) 
+	     input.value = '';
+	  else{
+	     input = inputElems[i].querySelectorAll('input');
+		  for(var j = 0; j < input.length; j++)
+			  input[j].checked = false;
+	  }
   }
 
 }
@@ -78,7 +79,7 @@ function submitModal() {
 
   clearInputValues();
 
-  alert("Your application has been rejected :(");
+  alert("After an extensive review, your application has been rejected :(");
 }
 /*
  * Wait until the DOM content is loaded, and then hook up UI interactions, etc.
