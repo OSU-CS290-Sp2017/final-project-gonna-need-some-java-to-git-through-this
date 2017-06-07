@@ -86,9 +86,44 @@
 				TIE Fighter Pilot-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.			</div>
 		</section>
 
+		<div class="add-listing">
+			<button type="button" id="add-listing-button">Add Listing</button>
+		</div>
+
 		</main>
 
-		<div id="modal-background" class="hidden"></div>
+		<!--Modal for Adding Job Listing-->
+		<div id="modal-job-background" class="hidden"></div>
+
+			<div class="job-listing-modal" class="hidden">
+				<div class="modal-dialog-box">
+					<div class="modal-header">
+						<h3>Add Job Listing</h3>
+						<button type="button" class="modal-close">&#x274C;</button>
+					</div>
+
+					<div class="modal-body">
+						<div class="text-input-element">
+							<label for="img-url">Picture (url):</label>
+							<input type="text" id="img-url-input">
+						</div>
+					
+						<div class="text-input-element">
+							<p>Job description: </p>
+							<textarea id="job-description-input"></textarea>
+						</div>
+	
+					</div>
+
+					<div class="modal-footer">
+						<button type="button" class="modal-cancel">Cancel</button>
+						<button type="button" class="modal-post">Post</button>
+					</div>
+				</div>
+
+			</div>
+		<!--Modal for Job Application-->
+		<div id="modal-apply-background" class="hidden"></div>
 
 			<div class="application-modal" class="hidden">
 				<div class="modal-dialog-box">
