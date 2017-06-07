@@ -1,4 +1,3 @@
-
 function showApplyButtonModal(){
   	var modalBackdrop = document.getElementById('modal-background');
   	var createButtonModal = document.querySelector('apply-button-modal');
@@ -14,13 +13,29 @@ function closeApplyButtonModal(){
 	createButtonModal.classList.add('hidden');
 }
 
+function showAddListingModal(){
+  	var modalBackdrop = document.getElementById('modal-job-background');
+  	var createButtonModal = document.querySelector('job-listing-modal');
+	modalBackdrop.classList.remove('hidden');
+	createButtonModal.classList.remove('hidden');
+}
+
+function closeAddListingModal(){
+  	var modalBackdrop = document.getElementById('modal-job-background');
+  	var createButtonModal = document.querySelector('job-listing-modal');
+	modalBackdrop.classList.add('hidden');
+	createButtonModal.classList.add('hidden');
+
+	clearInputValues();
+}
+
 /*
  * This function shows the modal to create a twit when the "create twit"
  * button is clicked.
  */
 function showApplyModal() {
 
-  var modalBackdrop = document.getElementById('modal-background');
+  var modalBackdrop = document.getElementById('modal-apply-background');
   var createAppModal = document.querySelector('.application-modal');
 
   // Show the modal and its backdrop.
@@ -36,7 +51,7 @@ function showApplyModal() {
  */
 function closeApplyModal() {
 
-  var modalBackdrop = document.getElementById('modal-background');
+  var modalBackdrop = document.getElementById('modal-apply-background');
   var createAppModal = document.querySelector('.application-modal');
 
   // Hide the modal and its backdrop.
@@ -81,6 +96,20 @@ function submitModal() {
 
   alert("After an extensive review, your application has been rejected :(");
 }
+
+function postModal(){
+  
+  var modalBackdrop = document.getElementById('modal-background');
+  var createAppModal = document.querySelector('.application-modal');
+
+  // Hide the modal and its backdrop.
+  modalBackdrop.classList.add('hidden');
+  createAppModal.classList.add('hidden');
+
+  clearInputValues();
+
+  alert("Your job listing has been posted");
+}
 /*
  * Wait until the DOM content is loaded, and then hook up UI interactions, etc.
  */
@@ -95,13 +124,21 @@ window.addEventListener('DOMContentLoaded', function () {
   var applyButton = document.querySelector('.apply-button');
   applyButton.addEventListener('click', showApplyModal);
 
-  var modalCloseButton = document.querySelector('.application-modal .modal-close');
-  modalCloseButton.addEventListener('click', closeApplyModal);
+  var addListingButton = document.querySelector('.add-listing');
+  addListingButton.addEventListener('click', showAddListingModal);
 
-  var modalCancelButton = document.querySelector('.application-modal .modal-cancel');
-  modalCancelButton.addEventListener('click', closeApplyModal);
+  var modalCloseButton = document.querySelectorAll('.modal-close');
+  for(var i = 0; i < modalCloseButton.length; i++)
+	modalCloseButton[i].addEventListener('click', closeApplyModal);
+
+  var modalCancelButton = document.querySelectorAll('.modal-cancel');
+  for(var i = 0; i < modalCancelButton.length; i++)
+  	modalCancelButton[i].addEventListener('click', closeApplyModal);
 
   var modalSubmitButton = document.querySelector('.application-modal .modal-submit');
   modalSubmitButton.addEventListener('click', submitModal);
+
+  var modalPostButton = document.querySelector('.job-listing-modal .modal-post');
+  modalPostButton.addEventListener('click', postModal);
 
 });
