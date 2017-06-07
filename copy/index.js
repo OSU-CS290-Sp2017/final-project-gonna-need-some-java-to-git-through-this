@@ -1,15 +1,31 @@
+
+function showApplyButtonModal(){
+  	var modalBackdrop = document.getElementById('modal-background');
+  	var createButtonModal = document.querySelector('apply-button-modal');
+	modalBackdrop.classList.remove('hidden');
+	createButtonModal.classList.remove('hidden');
+
+}
+
+function closeApplyButtonModal(){
+  	var modalBackdrop = document.getElementById('modal-background');
+  	var createButtonModal = document.querySelector('apply-button-modal');
+	modalBackdrop.classList.add('hidden');
+	createButtonModal.classList.add('hidden');
+}
+
 /*
  * This function shows the modal to create a twit when the "create twit"
  * button is clicked.
  */
-function showCreateTwitModal() {
+function showApplyModal() {
 
-  var modalBackdrop = document.getElementById('modal-backdrop');
-  var createTwitModal = document.getElementById('create-twit-modal');
+  var modalBackdrop = document.getElementById('modal-background');
+  var createAppModal = document.getElementById('application-modal');
 
   // Show the modal and its backdrop.
   modalBackdrop.classList.remove('hidden');
-  createTwitModal.classList.remove('hidden');
+  createAppModal.classList.remove('hidden');
 
 }
 
@@ -18,59 +34,66 @@ function showCreateTwitModal() {
  * values from the input fields whenever any of the modal close actions are
  * taken.
  */
-function closeCreateTwitModal() {
+function closeApplyModal() {
 
-  var modalBackdrop = document.getElementById('modal-backdrop');
-  var createTwitModal = document.getElementById('create-twit-modal');
+  var modalBackdrop = document.getElementById('modal-background');
+  var createAppModal = document.getElementById('application-modal');
 
   // Hide the modal and its backdrop.
   modalBackdrop.classList.add('hidden');
-  createTwitModal.classList.add('hidden');
+  createAppModal.classList.add('hidden');
 
-  clearTwitInputValues();
+  clearInputValues();
 
 }
 
 /*
  * This function clears any value present in any of the twit input elements.
  */
-function clearTwitInputValues() {
+function clearInputValues() {
 
-  var twitInputElems = document.getElementsByClassName('twit-input-element');
-  for (var i = 0; i < twitInputElems.length; i++) {
-    var input = twitInputElems[i].querySelector('input, textarea');
+  var inputElems = document.getElementsByClassName('text-input-element');
+  for (var i = 0; i < inputElems.length; i++) {
+    var input = inputElems[i].querySelector('input, textarea');
     input.value = '';
   }
 
 }
 
+function submitModal() {
+
+  var modalBackdrop = document.getElementById('modal-background');
+  var createAppModal = document.getElementById('application-modal');
+
+  // Hide the modal and its backdrop.
+  modalBackdrop.classList.add('hidden');
+  createAppModal.classList.add('hidden');
+
+  clearInputValues();
+
+  alert("Your application has been rejected :(");
+}
 /*
  * Wait until the DOM content is loaded, and then hook up UI interactions, etc.
  */
 window.addEventListener('DOMContentLoaded', function () {
 
-  // Remember all of the existing twits in an array that we can use for search.
-  var twitElemsCollection = document.getElementsByClassName('twit');
-  for (var i = 0; i < twitElemsCollection.length; i++) {
-    allTwitElems.push(twitElemsCollection[i]);
-  }
+  var openApply = document.querySelector('.img_container');	//Hover over image to show apply button
+  openApply.addEventListener('onmouseover', showApplyButtonModal);
 
-  var createTwitButton = document.getElementById('create-twit-button');
-  createTwitButton.addEventListener('click', showCreateTwitModal);
+  var closeApply = document.querySelector('.img-container');	//close apply button modal
+  closeApply.addEventListener('onmouseout', closeApplyButtonModal);
 
-  var modalCloseButton = document.querySelector('#create-twit-modal .modal-close-button');
-  modalCloseButton.addEventListener('click', closeCreateTwitModal);
+  var applyButton = document.getElementById('apply-button');
+  createTwitButton.addEventListener('click', showApplyModal);
 
-  var modalCancalButton = document.querySelector('#create-twit-modal .modal-cancel-button');
-  modalCancalButton.addEventListener('click', closeCreateTwitModal);
+  var modalCloseButton = document.querySelector('#application-modal .modal-close');
+  modalCloseButton.addEventListener('click', closeApplyModal);
 
-  var modalAcceptButton = document.querySelector('#create-twit-modal .modal-accept-button');
-  modalAcceptButton.addEventListener('click', insertNewTwit);
+  var modalCancelButton = document.querySelector('#application-modal .modal-cancel');
+  modalCancalButton.addEventListener('click', closeApplyModal);
 
-  var searchButton = document.getElementById('navbar-search-button');
-  searchButton.addEventListener('click', doTwitSearch);
-
-  var searchInput = document.getElementById('navbar-search-input');
-  searchInput.addEventListener('input', doTwitSearch);
+  var modalSubmitButton = document.querySelector('#application-modal .modal-submit');
+  modalAcceptButton.addEventListener('click', submitModal);
 
 });
