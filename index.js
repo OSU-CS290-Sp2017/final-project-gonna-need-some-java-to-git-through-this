@@ -88,13 +88,52 @@ function submitModal() {
   var modalBackdrop = document.getElementById('modal-background');
   var createAppModal = document.querySelector('.application-modal');
 
-  // Hide the modal and its backdrop.
-  modalBackdrop.classList.add('hidden');
-  createAppModal.classList.add('hidden');
 
-  clearInputValues();
+  
+  var empty = false;
+  console.log(empty);
+  var inputElems = document.getElementsByClassName('text-input-element');
+  console.log(inputElems.length)
+  for (var i = 0; i < (inputElems.length)-1; i++) {
+	console.log(empty);
+    var input = inputElems[i].querySelector('input[type=text], textarea');
+	 console.log(input);
+	 //console.log(input.value);
+	 if(input.value == null) {
+	     empty = true;
+		 console.log(empty);
+		 break;
+		}
+		
+  }
+  console.log("after loop");
+ if(!empty){
+	input = inputElems[(inputElems.length)-1].querySelectorAll('input[type=radio]:checked');
+	console.log(input.length);
+	if (input.length == 0){
+		empty = true;
 
-  alert("After an extensive review, your application has been rejected :(");
+	}
+} 
+		
+  
+
+  if(empty){
+	  alert("Missing Required Feild");
+  }
+  else{
+	// Hide the modal and its backdrop.
+	modalBackdrop.classList.add('hidden');
+	createAppModal.classList.add('hidden');
+	clearInputValues();
+	alert("After an extensive review, your application has been rejected :("); 
+  }
+  
+  //clearInputValues();
+  
+  
+
+  //alert("After an extensive review, your application has been rejected :(");
 }
 
 function postModal(){
