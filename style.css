@@ -1,0 +1,94 @@
+body{
+    background-image: url(http://www.wallpapervortex.com/ipad_air_wallpapers/ipad_air_14424_star_wars_death_star.jpg);
+    color: white;
+    margin: 0;
+}
+
+.navbar {
+  background-color: #fff;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.navlist {
+  margin: 0 0 0 20px;
+  padding: 10px;
+}
+
+.navitem {
+  display: inline-block;
+  padding-left: 40px;
+  font-size: 28px;
+  font-family: 'Agency FB';
+  font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+    color: red;
+}
+
+h1 {
+    padding: 30px 30px 30px 60px;
+    background-image: url(https://portlandflag.files.wordpress.com/2015/12/11-akh-flag-of-the-galactic-empire.png),
+    url(banner.png);
+    background-size: contain;
+    background-repeat: no-repeat, repeat;
+    background-position-x: right;
+    margin: 0;
+    font-family: 'Agency FB';
+    font-size: 111px;
+    color: black;
+    -webkit-text-stroke: 3px white;
+    letter-spacing: 5px;
+}
+
+.news_article{
+    max-width: 70%;
+}
+
+.main_container{
+    display: inline-flex;
+}
+
+.container{
+  margin: 50px 10%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.job_listing {
+    flex: 0 1 28%;
+    display: flex;
+    margin: 10px;
+    padding: 20px;
+    border: 4px solid #ab0d0d;
+    border-radius: 4px;
+    background-color: #dadada;
+    color: black;
+}
+
+.img_container img{
+    width: 180px;
+    height: 400px;
+}
+
+p {
+    font-family: Roboto;
+}
+
+.photo-card {
+  flex: 0 1 28%;
+  display: flex;
+  margin: 10px;
+  padding: 20px;
+  border: 4px solid #ab0d0d;
+  border-radius: 4px;
+  background-color: #dadada;
+  color: black;
+}
+
+.emp-photo-img {
+    height: 200px;
+    width: 200px;
+}
