@@ -88,8 +88,8 @@ function submitModal() {
 	console.log(empty);
     var input = inputElems[i].querySelector('input[type=text], textarea');
 	 console.log(input);
-	 //console.log(input.value);
-	 if(input.value == null) {
+	 console.log(input.value);
+	 if(input.value == "") {
 	     empty = true;
 		 console.log(empty);
 		 break;
