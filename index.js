@@ -176,8 +176,9 @@ window.addEventListener('DOMContentLoaded', function () {
   closeApply.addEventListener('onmouseout', closeApplyButtonModal);*/
 
   var applyButton = document.querySelectorAll('.apply-button');
+	console.log("Apply button:", applyButton[0]);
 	for(var j=0; applyButton.length; j++){
-  		applyButton.addEventListener[j]('click', showApplyModal);
+  		applyButton[j].addEventListener('click', showApplyModal);
 	}
 
   var addListingButton = document.querySelector('.add-listing');
