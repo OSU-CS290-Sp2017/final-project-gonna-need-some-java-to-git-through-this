@@ -177,7 +177,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
   var applyButton = document.querySelectorAll('.apply-button');
 	console.log("Apply button:", applyButton[0]);
-	for(var j=0; applyButton.length; j++){
+	for(var j=0; j < applyButton.length; j++){
   		applyButton[j].addEventListener('click', showApplyModal);
 	}
 
@@ -192,7 +192,7 @@ window.addEventListener('DOMContentLoaded', function () {
   for(var i = 0; i < modalCancelButton.length; i++)
   	modalCancelButton[i].addEventListener('click', closeApplyModal);
 
-  var modalSubmitButton = document.querySelector('.application-modal .modal-submit');
+  var modalSubmitButton = document.querySelector('#application-modal .modal-submit');
   modalSubmitButton.addEventListener('click', submitModal);
 
   var modalPostButton = document.querySelector('.job-listing-modal .modal-post');
