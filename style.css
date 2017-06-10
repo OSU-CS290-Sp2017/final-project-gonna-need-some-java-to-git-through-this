@@ -65,18 +65,31 @@ h2 {
 
 .job_listing {
     flex: 0 1 28%;
-    display: flex;
+    display: grid;
     margin: 10px;
     padding: 20px;
     border: 4px solid #ab0d0d;
     border-radius: 4px;
     background-color: #dadada;
     color: black;
+    min-width: 400px;
+}
+
+.job_listing h4{
+    font-size: 38px;
+    margin: 0;
+    font-family: 'Agency FB';
+    text-align: center;
+}
+
+.job_description {
+    padding-top: 10px;
 }
 
 .img_container img{
     width: 180px;
     height: 400px;
+    padding-right: 10px;
 }
 
 p {
@@ -97,7 +110,7 @@ p {
 }
 
 .img-container{
-    display: inline;
+    display: flex;
 }
 
 .emp-photo-img {
@@ -122,14 +135,65 @@ p {
     overflow: scroll;
 }
 
+#modal-background {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.35);
+}
+
 #application-modal {
     position: fixed;
-    top: 50%;
+    top: 0;
     bottom: 0;
-    left: 50%;
+    left: 0;
     right: 0;
     z-index: 1010;
     overflow: scroll;
+}
+
+.modal-dialog-box {
+    width: auto;
+    max-width: 600px;
+    min-width: 350px;
+    min-height: 300px;
+    margin: 40px auto;
+    background-color: #dadada;
+    border-radius: 15px;
+    color: black;
+    border: 4px solid #ab0d0d;
+    border-radius: 4px;
+    padding: 20px;
+}
+
+.modal-header {
+  position: relative;
+  padding: 10px 20px;
+}
+
+.modal-header h3 {
+    font-family: 'Agency FB';
+    margin: 0;
+    font-size: 28px;
+    text-align: center;
+}
+
+.modal-close {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 24px;
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+#why-join-input {
+    margin-left: 80px;
 }
 
 .hidden {
