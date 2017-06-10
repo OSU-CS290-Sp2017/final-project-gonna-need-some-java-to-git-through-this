@@ -23,10 +23,10 @@
 
 		<nav class="navbar">
 			<ul class="navlist">
-                <li class="navitem navlink"><a href="./index.html">Home</a></li>
-                <li class="navitem navlink"><a href="./news.html">News</a></li>
-                <li class="navitem navlink"><a href="./job_openings.html">Job Openings</a></li>
-                <li class="navitem navlink"><a href="./about.html">About Us</a></li>
+        		        <li class="navitem navlink"><a href="./index.html">Home</a></li>
+        		        <li class="navitem navlink"><a href="./news.html">News</a></li>
+        		        <li class="navitem navlink"><a href="./job_openings.html">Job Openings</a></li>
+        		        <li class="navitem navlink"><a href="./about.html">About Us</a></li>
 			</ul>
 		</nav>
 
@@ -90,6 +90,36 @@
 		</section>
 
 		</main>
+
+		<!--Modal for Adding Job Listing-->
+		<div id="modal-job-background" class="hidden"></div>
+
+			<div class="job-listing-modal" class="hidden">
+				<div class="modal-dialog-box">
+					<div class="modal-header">
+						<h3>Add Job Listing</h3>
+						<button type="button" class="modal-close">&#x274C;</button>
+					</div>
+
+					<div class="modal-body">
+						<div class="text-input-element">
+							<label for="img-url">Picture (url):</label>
+							<input type="text" id="img-url-input">
+						</div>
+					
+						<div class="text-input-element">
+							<p>Job description: </p>
+							<textarea id="job-description-input"></textarea>
+						</div>
+	
+					</div>
+
+					<div class="modal-footer">
+						<button type="button" class="modal-cancel">Cancel</button>
+						<button type="button" class="modal-post">Post</button>
+					</div>
+				</div>
+			</div>
 
 		<div id="modal-background" class="hidden"></div>
 
