@@ -112,6 +112,16 @@ p {
     position: center;
 }
 
+#job-listing-modal {
+    position: fixed;
+    top: 50%;
+    bottom: 0;
+    left: 50%;
+    right: 0;
+    z-index: 1010;
+    overflow: scroll;
+}
+
 #application-modal {
     position: fixed;
     top: 50%;
@@ -122,9 +132,6 @@ p {
     overflow: scroll;
 }
 
-
 .hidden {
-	visibility: hidden;
-	backface-visibility: hidden;
-	display: none;
+    display: none;
 }
