@@ -1,4 +1,4 @@
-function showApplyButtonModal(){
+/*tion showApplyButtonModal(){
   	var modalBackdrop = document.getElementById('modal-background');
   	var createButtonModal = document.querySelector('apply-button-modal');
 	modalBackdrop.classList.remove('hidden');
@@ -11,32 +11,29 @@ function closeApplyButtonModal(){
   	var createButtonModal = document.querySelector('apply-button-modal');
 	modalBackdrop.classList.add('hidden');
 	createButtonModal.classList.add('hidden');
-}
+}i*/
 
 function showAddListingModal(){
-  	var modalBackdrop = document.getElementById('modal-job-background');
-  	var createButtonModal = document.querySelector('job-listing-modal');
+  	var modalBackdrop = document.getElementById('modal-background');
+  	var createButtonModal = document.getElementById('job-listing-modal');
 	modalBackdrop.classList.remove('hidden');
 	createButtonModal.classList.remove('hidden');
 }
 
 function closeAddListingModal(){
-  	var modalBackdrop = document.getElementById('modal-job-background');
-  	var createButtonModal = document.querySelector('job-listing-modal');
+  	var modalBackdrop = document.getElementById('modal-background');
+  	var createButtonModal = document.getElementById('job-listing-modal');
 	modalBackdrop.classList.add('hidden');
 	createButtonModal.classList.add('hidden');
 
 	clearInputValues();
 }
 
-/*
- * This function shows the modal to create a twit when the "create twit"
- * button is clicked.
- */
+
 function showApplyModal() {
 
-  var modalBackdrop = document.getElementById('modal-apply-background');
-  var createAppModal = document.querySelector('.application-modal');
+  var modalBackdrop = document.getElementById('modal-background');
+  var createAppModal = document.getElementById('application-modal');
 
   // Show the modal and its backdrop.
   modalBackdrop.classList.remove('hidden');
@@ -44,15 +41,10 @@ function showApplyModal() {
 
 }
 
-/*
- * This function hides the modal to create a twit and clears any existing
- * values from the input fields whenever any of the modal close actions are
- * taken.
- */
 function closeApplyModal() {
 
-  var modalBackdrop = document.getElementById('modal-apply-background');
-  var createAppModal = document.querySelector('.application-modal');
+  var modalBackdrop = document.getElementById('modal-background');
+  var createAppModal = document.getElementById('application-modal');
 
   // Hide the modal and its backdrop.
   modalBackdrop.classList.add('hidden');
@@ -62,9 +54,6 @@ function closeApplyModal() {
 
 }
 
-/*
- * This function clears any value present in any of the twit input elements.
- */
 function clearInputValues() {
 
   var inputElems = document.getElementsByClassName('text-input-element');
@@ -86,13 +75,13 @@ function clearInputValues() {
 function submitModal() {
 
   var modalBackdrop = document.getElementById('modal-background');
-  var createAppModal = document.querySelector('.application-modal');
+  var createAppModal = document.getElementById('application-modal');
 
 
   
   var empty = false;
   console.log(empty);
-  var currModal = document.getElementsByClassName("application-modal");
+  var currModal = document.querySelectorAll("application-modal");
   console.log(currModal);
   var inputElems = currModal[0].getElementsByClassName('text-input-element');
   for (var i = 0; i < (inputElems.length)-1; i++) {
@@ -140,11 +129,11 @@ function submitModal() {
 function postModal(){
   
   var modalBackdrop = document.getElementById('modal-background');
-  var createAppModal = document.querySelector('.application-modal');
+  var createAppModal = document.getElementById('application-modal');
 
   var empty = false;
   console.log(empty);
-  var currModal = document.getElementsByClassName("job-listing-modal");
+  var currModal = document.querySelectorAll("job-listing-modal");
   console.log(currModal);
   var inputElems = currModal[0].getElementsByClassName('text-input-element');
   console.log(inputElems);
@@ -180,14 +169,16 @@ function postModal(){
  */
 window.addEventListener('DOMContentLoaded', function () {
 
-  var openApply = document.querySelector('.img_container');	//Hover over image to show apply button
+/*  var openApply = document.querySelector('.img_container');	//Hover over image to show apply button
   openApply.addEventListener('onmouseover', showApplyButtonModal);
 
   var closeApply = document.querySelector('.img_container');	//close apply button modal
-  closeApply.addEventListener('onmouseout', closeApplyButtonModal);
+  closeApply.addEventListener('onmouseout', closeApplyButtonModal);*/
 
-  var applyButton = document.querySelector('.apply-button');
-  applyButton.addEventListener('click', showApplyModal);
+  var applyButton = document.querySelectorAll('.apply-button');
+	for(var j=0; applyButton.length; j++){
+  		applyButton.addEventListener[i]('click', showApplyModal);
+	}
 
   var addListingButton = document.querySelector('.add-listing');
   addListingButton.addEventListener('click', showAddListingModal);
