@@ -81,7 +81,7 @@ function submitModal() {
   
   var empty = false;
   console.log(empty);
-  var currModal = document.querySelectorAll("application-modal");
+  var currModal = document.querySelectorAll("#application-modal");
   console.log(currModal);
   var inputElems = currModal[0].getElementsByClassName('text-input-element');
   for (var i = 0; i < (inputElems.length)-1; i++) {
@@ -109,7 +109,7 @@ function submitModal() {
   
 
   if(empty){
-	  alert("Missing Required Feild");
+	  alert("Missing Required Field");
   }
   else{
 	// Hide the modal and its backdrop.
@@ -129,11 +129,11 @@ function submitModal() {
 function postModal(){
   
   var modalBackdrop = document.getElementById('modal-background');
-  var createAppModal = document.getElementById('application-modal');
+  var createAppModal = document.getElementById('job-listing-modal');
 
   var empty = false;
   console.log(empty);
-  var currModal = document.querySelectorAll("job-listing-modal");
+  var currModal = document.querySelectorAll("#job-listing-modal");
   console.log(currModal);
   var inputElems = currModal[0].getElementsByClassName('text-input-element');
   console.log(inputElems);
@@ -151,7 +151,7 @@ function postModal(){
   }
   
   if(empty){
-	  alert("Missing Required Feild");
+	  alert("Missing Required Field");
   }
   else{
   // Hide the modal and its backdrop.
@@ -184,15 +184,19 @@ window.addEventListener('DOMContentLoaded', function () {
   var addListingButton = document.querySelector('.add-listing');
   addListingButton.addEventListener('click', showAddListingModal);
 
-  var modalCloseButton = document.querySelectorAll('.modal-close');
-  for(var i = 0; i < modalCloseButton.length; i++)
-	modalCloseButton[i].addEventListener('click', closeApplyModal);
+  var modalCloseButton = document.querySelector('#application-modal .modal-close');
+	modalCloseButton.addEventListener('click', closeApplyModal);
+  
+  var modalCloseButton = document.querySelector('#job-listing-modal .modal-close');
+	modalCloseButton.addEventListener('click', closeAddListingModal);
 
-  var modalCancelButton = document.querySelectorAll('.modal-cancel');
-  for(var i = 0; i < modalCancelButton.length; i++)
-  	modalCancelButton[i].addEventListener('click', closeApplyModal);
+  var modalCancelButton = document.querySelector('#application-modal .modal-cancel');
+  	modalCancelButton.addEventListener('click', closeApplyModal);
 
-  var modalSubmitButton = document.querySelector('#application-modal .modal-submit');
+  var modalCancelButton = document.querySelector('#job-listing-modal .modal-cancel');
+  	modalCancelButton.addEventListener('click', closeAddListingModal);
+  
+	var modalSubmitButton = document.querySelector('#application-modal .modal-submit');
   modalSubmitButton.addEventListener('click', submitModal);
 
   var modalPostButton = document.querySelector('#job-listing-modal .modal-post');
