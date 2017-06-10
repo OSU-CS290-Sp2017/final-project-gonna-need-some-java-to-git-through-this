@@ -2,6 +2,7 @@ body{
     color: white;
     background-image: url(http://www.wallpapervortex.com/ipad_air_wallpapers/ipad_air_14424_star_wars_death_star.jpg);
     margin: 0;
+    background-size: cover;
 }
 
 .navbar {
@@ -43,6 +44,11 @@ h1 {
     letter-spacing: 5px;
 }
 
+h2 {
+    font-size: 28px;
+    padding: 10px 10px 10px 50px;
+}
+
 .news_article{
     max-width: 70%;
 }
@@ -75,6 +81,8 @@ h1 {
 
 p {
     font-family: Roboto;
+    padding-left:  60px;
+    font-size: 18px;
 }
 
 .emp-card-container {
@@ -104,10 +112,19 @@ p {
     position: center;
 }
 
+#application-modal {
+    position: fixed;
+    top: 50%;
+    bottom: 0;
+    left: 50%;
+    right: 0;
+    z-index: 1010;
+    overflow: scroll;
+}
+
 
 .hidden {
 	visibility: hidden;
 	backface-visibility: hidden;
 	display: none;
 }
-
