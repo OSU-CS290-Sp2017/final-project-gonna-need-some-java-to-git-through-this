@@ -92,8 +92,9 @@ function submitModal() {
   
   var empty = false;
   console.log(empty);
-  var inputElems = document.getElementsByClassName('text-input-element');
-  console.log(inputElems.length)
+  var currModal = document.getElementsByClassName("application-modal");
+  console.log(currModal);
+  var inputElems = currModal[0].getElementsByClassName('text-input-element');
   for (var i = 0; i < (inputElems.length)-1; i++) {
 	console.log(empty);
     var input = inputElems[i].querySelector('input[type=text], textarea');
@@ -141,6 +142,29 @@ function postModal(){
   var modalBackdrop = document.getElementById('modal-background');
   var createAppModal = document.querySelector('.application-modal');
 
+  var empty = false;
+  console.log(empty);
+  var currModal = document.getElementsByClassName("job-listing-modal");
+  console.log(currModal);
+  var inputElems = currModal[0].getElementsByClassName('text-input-element');
+  console.log(inputElems);
+  for (var i = 0; i < (inputElems.length); i++) {
+	console.log(empty);
+    var input = inputElems[i].querySelector('input[type=text], textarea');
+	 console.log(input);
+	 console.log(input.value);
+	 if(input.value == "") {
+	     empty = true;
+		 console.log(empty);
+		 break;
+		}
+		
+  }
+  
+  if(empty){
+	  alert("Missing Required Feild");
+  }
+  else{
   // Hide the modal and its backdrop.
   modalBackdrop.classList.add('hidden');
   createAppModal.classList.add('hidden');
@@ -148,6 +172,8 @@ function postModal(){
   clearInputValues();
 
   alert("Your job listing has been posted");
+  }
+
 }
 /*
  * Wait until the DOM content is loaded, and then hook up UI interactions, etc.
