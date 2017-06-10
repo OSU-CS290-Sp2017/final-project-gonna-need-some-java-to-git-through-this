@@ -86,10 +86,14 @@ h2 {
     padding-top: 10px;
 }
 
+.img_container {
+    text-align: center;
+}
+
 .img_container img{
     width: 180px;
     height: 400px;
-    padding-right: 10px;
+    position: center;
 }
 
 p {
@@ -127,9 +131,9 @@ p {
 
 #job-listing-modal {
     position: fixed;
-    top: 50%;
+    top: 0;
     bottom: 0;
-    left: 50%;
+    left: 0;
     right: 0;
     z-index: 1010;
     overflow: scroll;
