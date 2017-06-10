@@ -195,7 +195,7 @@ window.addEventListener('DOMContentLoaded', function () {
   var modalSubmitButton = document.querySelector('#application-modal .modal-submit');
   modalSubmitButton.addEventListener('click', submitModal);
 
-  var modalPostButton = document.querySelector('.job-listing-modal .modal-post');
+  var modalPostButton = document.querySelector('#job-listing-modal .modal-post');
   modalPostButton.addEventListener('click', postModal);
 
 });
