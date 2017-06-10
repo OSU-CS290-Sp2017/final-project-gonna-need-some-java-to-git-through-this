@@ -98,7 +98,6 @@ h2 {
 
 p {
     font-family: Roboto;
-    padding-left:  60px;
     font-size: 18px;
 }
 
@@ -178,11 +177,59 @@ p {
   padding: 10px 20px;
 }
 
+.modal-body {
+    padding-left: 16%;
+}
+
 .modal-header h3 {
     font-family: 'Agency FB';
     margin: 0;
     font-size: 28px;
     text-align: center;
+}
+
+.text-input-element {
+    display: grid;
+    max-width: 400px;
+    text-align: center;
+    font-family: Roboto;
+    margin: 0;
+}
+
+#modal-mult-question {
+    text-align: left;
+    width: 200px;
+    margin-left: 25%;
+}
+
+input[type=radio] {
+    margin-left: 20px;
+}
+
+.modal-footer {
+    text-align: center;
+    padding-right: 4%;
+}
+
+.modal-cancel {
+    outline: none;
+    font-size: 20px;
+    font-family: 'Agency FB';
+    position: center;
+}
+
+.modal-submit {
+    outline: none;
+    font-size: 20px;
+    font-family: 'Agency FB';
+    position: center;
+}
+
+.modal-post {
+    outline: none;
+    font-size: 20px;
+    font-family: 'Agency FB';
+    position: center;
 }
 
 .modal-close {
@@ -194,10 +241,6 @@ p {
     background: none;
     padding: 0;
     cursor: pointer;
-}
-
-#why-join-input {
-    margin-left: 80px;
 }
 
 .hidden {
