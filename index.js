@@ -177,7 +177,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
   var applyButton = document.querySelectorAll('.apply-button');
 	for(var j=0; applyButton.length; j++){
-  		applyButton.addEventListener[i]('click', showApplyModal);
+  		applyButton.addEventListener[j]('click', showApplyModal);
 	}
 
   var addListingButton = document.querySelector('.add-listing');
