@@ -1,6 +1,6 @@
 body{
-    background-image: url(http://www.wallpapervortex.com/ipad_air_wallpapers/ipad_air_14424_star_wars_death_star.jpg);
     color: white;
+    background-image: url(http://www.wallpapervortex.com/ipad_air_wallpapers/ipad_air_14424_star_wars_death_star.jpg);
     margin: 0;
 }
 
@@ -102,4 +102,10 @@ p {
     font-size: 40px;
     font-family: 'Agency FB';
     position: center;
+}
+
+.hidden {
+	visibility: hidden;
+	backface-visibility: hidden;
+	display: none;
 }
