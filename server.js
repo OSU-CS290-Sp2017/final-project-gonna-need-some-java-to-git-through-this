@@ -7,3 +7,7 @@ var app = express();
 var port = process.env.PORT || 3000;
 app.engine('handlebars', exphbs({defaultLayout:'main'}));
 app.set('view engine', 'handlebars');
+
+var aboutData = require("./aboutData");
+var newsData = require("./newsData");
+var jobData = require("./jobData");
