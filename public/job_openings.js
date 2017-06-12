@@ -243,7 +243,7 @@ function storeJobListing(jobTitle, url, caption, callback) {
   alert("Your job listing has been posted");
   }
 
-}
+
 /*
  * Wait until the DOM content is loaded, and then hook up UI interactions, etc.
  */
