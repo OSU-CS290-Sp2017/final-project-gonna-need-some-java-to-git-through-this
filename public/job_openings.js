@@ -202,12 +202,12 @@ function submitModal() {
 
 function storeJobListing(jobTitle, url, caption, callback) {
 
-  var postURL = "/Job-Openings/addListing";
+  var postURL = "/Job-Openings";
 
   var postRequest = new XMLHttpRequest();
   postRequest.open('POST', postURL);
   postRequest.setRequestHeader('Content-Type', 'application/json');
-
+  console.log("after header request");
   postRequest.addEventListener('load', function (event) {
     var error;
     if (event.target.status !== 200) {
@@ -215,14 +215,15 @@ function storeJobListing(jobTitle, url, caption, callback) {
     }
     callback(error);
   });
-
+  console.log("after event listener");
   var postBody = {
 	title: jobTitle,
     url: url,
-    caption: caption
+    description: caption
   };
+  console.log(postBody);
   postRequest.send(JSON.stringify(postBody));
-
+  console.log("after post request");
 }
   
   
@@ -230,18 +231,18 @@ function storeJobListing(jobTitle, url, caption, callback) {
   
   
   
-  if(empty){
-	  alert("Missing Required Field");
-  }
-  else{
+  //if(empty){
+  //    alert("Missing Required Field");
+  //}
+  //else{
   // Hide the modal and its backdrop.
-  modalBackdrop.classList.add('hidden');
-  createAppModal.classList.add('hidden');
+  //modalBackdrop.classList.add('hidden');
+  //createAppModal.classList.add('hidden');
 
-  clearInputValues();
+  //clearInputValues();
 
-  alert("Your job listing has been posted");
-  }
+  //alert("Your job listing has been posted");
+  //}
 
 
 /*
@@ -262,7 +263,7 @@ window.addEventListener('DOMContentLoaded', function () {
 	}
 
   var addListingButton = document.querySelector('.add-listing');
-  addListingButton.addEventListener('click', insertNewJobOpening);
+  addListingButton.addEventListener('click', showAddListingModal);
 
   var modalCloseButton = document.querySelector('#application-modal .modal-close');
 	modalCloseButton.addEventListener('click', closeApplyModal);
@@ -280,6 +281,6 @@ window.addEventListener('DOMContentLoaded', function () {
   modalSubmitButton.addEventListener('click', submitModal);
 
   var modalPostButton = document.querySelector('#job-listing-modal .modal-post');
-  modalPostButton.addEventListener('click', postModal);
+  modalPostButton.addEventListener('click', insertNewJobOpening);
 
 });

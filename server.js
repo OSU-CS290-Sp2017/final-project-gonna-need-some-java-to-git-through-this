@@ -2,6 +2,7 @@ var path = require('path');
 var fs = require('fs');
 var express = require('express');
 var exphbs = require('express-handlebars');
+var bodyParser = require('body-parser');
 
 var app = express();
 var port = process.env.PORT || 3000;
@@ -14,6 +15,38 @@ var jobData = require("./jobData");
 var newsTitle = "Galactic News";
 
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(bodyParser.json());
+
+app.post('/Job-Openings/addPhoto', function (req, res, next) {
+    var job = jobData[req.params.job];
+    if (job) {
+        if (req.body.title && req.body && req.body.url) {
+
+            var job = {
+                title: req.body.title,
+                url: req.body.url,
+                caption: req.body.caption
+            };
+
+
+            jobData.push(job);
+            fs.writeFile('jobData.json', JSON.stringify(jobData), function (err) {
+                if (err) {
+                    res.status(500).send("Unable to save job to \"database\".");
+                } else {
+                    res.status(200).send();
+                }
+            });
+
+        } else {
+            res.status(400).send("Job Listing must have all fields filled out.");
+        }
+
+    } else {
+        next();
+    }
+});
 
 app.get('/', function (req, res, next) {
     var templateArgs = {
