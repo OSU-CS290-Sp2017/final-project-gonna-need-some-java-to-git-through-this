@@ -17,21 +17,21 @@ app.getapp.get('/', function (req, res, next) {
 });
 
 app.getapp.get('/News', function (req, res, next) {
-	templateArgs{
+	var templateArgs{
 		articles: newsData
 	};
 	res.render('news', templateArgs);
 });
 
 app.getapp.get('/Job-Openings', function (req, res, next) {
-	templateArgs{
+	var templateArgs{
 		jobs: jobData
 	};
 	res.render('job_openings', templateArgs);
 });
 
 app.getapp.get('/About', function (req, res, next) {
-	templateArgs{
+	var templateArgs{
 		people: aboutData
 	};
 	res.render('about', templateArgs);
