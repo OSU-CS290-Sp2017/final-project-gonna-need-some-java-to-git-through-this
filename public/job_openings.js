@@ -159,7 +159,7 @@ function insertNewJobOpening() {
                 var templateArgs = {
                     title: jobTitle,
                     url: photoURL,
-                    caption: jobDescription
+                    description: jobDescription
                 };
 
                 var jobListingHTML = jobListingTemplate(templateArgs);
