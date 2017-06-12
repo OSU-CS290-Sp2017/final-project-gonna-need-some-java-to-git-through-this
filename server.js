@@ -12,6 +12,8 @@ var aboutData = require("./aboutData");
 var newsData = require("./newsData");
 var jobData = require("./jobData");
 
+app.use(express.static(path.join(__dirname, 'public')));
+
 app.get('/', function (req, res, next) {
 	res.render('home');
 });
