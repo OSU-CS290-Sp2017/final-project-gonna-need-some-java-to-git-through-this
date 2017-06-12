@@ -104,86 +104,10 @@ function submitModal() {
 	alert("After an extensive review, your application has been rejected :("); 
   }
   
-  //clearInputValues();
-  
-  
+  clearInputValues();
 
-  //alert("After an extensive review, your application has been rejected :(");
+  alert("After an extensive review, your application has been rejected :(");
 }
-
-/* function postModal(){
-  
-  var modalBackdrop = document.getElementById('modal-background');
-  var createAppModal = document.getElementById('job-listing-modal');
-
-  var empty = false;
-  console.log(empty);
-  var currModal = document.querySelectorAll("#job-listing-modal");
-  console.log(currModal);
-  var inputElems = currModal[0].getElementsByClassName('text-input-element');
-  console.log(inputElems);
-  for (var i = 0; i < (inputElems.length); i++) {
-	console.log(empty);
-    var input = inputElems[i].querySelector('input[type=text], textarea');
-	 console.log(input);
-	 console.log(input.value);
-	 if(input.value == "") {
-	     empty = true;
-		 console.log(empty);
-		 break;
-		}
-		
-  } */
-  
-  
-  
-  
-  function insertNewJobOpening() {
-
-  var photoURL = document.getElementById('img-url-input').value || '';
-  var jobDescription = document.getElementById('job-description-input').value || '';
-  var jobTitle = document.getElementById('job-title-input').value || '';
-
-  if (photoURL.trim() && jobDescription !== '' && jobTitle !== '') {
-
-	console.log("photoURL: ", photoURL);
-	  console.log("jobDescription: ", jobDescription);
-	  console.log("jobTitle:", jobTitle);
-
-      storeJobListing(jobTitle, photoURL, jobDescription, function (err) {
-
-        if (err) {
-          alert("Unable to save job listing.  Got this error:\n\n" + err);
-        } else {
-
-          var jobListingTemplate = Handlebars.templates.jobListing;
-          var templateArgs = {
-			title: jobTitle,
-            url: photoURL,
-            caption: jobDescription
-          };
-
-          var jobListingHTML = jobListingTemplate(templateArgs);
-         
-
-          var jobListingContainer = document.querySelector('.main_container');
-          jobListingContainer.insertAdjacentHTML('beforeend', jobListingHTML);
-
-        }
-
-      });
-
-    closeAddListingModal();
-
-  } else {
-
-    alert('You must specify a value for the all fields.');
-
-  }
-
-}
-
-
 
 function storeJobListing(jobTitle, url, caption, callback) {
 
@@ -213,24 +137,51 @@ function storeJobListing(jobTitle, url, caption, callback) {
 }
   
   
-  
-  
-  
-  
-  //if(empty){
-  //    alert("Missing Required Field");
-  //}
-  //else{
-  // Hide the modal and its backdrop.
-  //modalBackdrop.classList.add('hidden');
-  //createAppModal.classList.add('hidden');
+function insertNewJobOpening() {
 
-  //clearInputValues();
+    var photoURL = document.getElementById('img-url-input').value || '';
+    var jobDescription = document.getElementById('job-description-input').value || '';
+    var jobTitle = document.getElementById('job-title-input').value || '';
 
-  //alert("Your job listing has been posted");
-  //}
+    if (photoURL.trim() && jobDescription !== '' && jobTitle !== '') {
+
+        console.log("photoURL: ", photoURL);
+        console.log("jobDescription: ", jobDescription);
+        console.log("jobTitle:", jobTitle);
+
+        storeJobListing(jobTitle, photoURL, jobDescription, function (err) {
+
+            if (err) {
+                alert("Unable to save job listing.  Got this error:\n\n" + err);
+            } else {
+
+                var jobListingTemplate = Handlebars.templates.jobListing;
+                var templateArgs = {
+                    title: jobTitle,
+                    url: photoURL,
+                    caption: jobDescription
+                };
+
+                var jobListingHTML = jobListingTemplate(templateArgs);
 
 
+                var jobListingContainer = document.querySelector('.main_container');
+                jobListingContainer.insertAdjacentHTML('beforeend', jobListingHTML);
+
+            }
+
+        });
+
+        closeAddListingModal();
+
+    } else {
+
+        alert('You must specify a value for the all fields.');
+
+    }
+
+}
+  
 /*
  * Wait until the DOM content is loaded, and then hook up UI interactions, etc.
  */
