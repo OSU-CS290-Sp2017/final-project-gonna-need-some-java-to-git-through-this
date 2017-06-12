@@ -12,6 +12,18 @@ var aboutData = require("./aboutData");
 var newsData = require("./newsData");
 var jobData = require("./jobData");
 
+app.getapp.get('/', function (req, res, next) {
+	res.render('home');
+});
+
+app.getapp.get('/News', function (req, res, next) {
+	templateArgs{
+		articles: newsData
+	};
+	res.render('news', templateArgs);
+});
+
+
 app.listen(port, function(){
 	console.log("Server listening on port:", port);
 });
