@@ -5,6 +5,25 @@ body{
     background-size: cover;
 }
 
+.mySlides {
+    width: 100%;
+}
+
+.pic-overlay {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.pic-overlay h2 {
+    font-size: 80px;
+    color: red;
+    -webkit-text-stroke: black 2px;
+
+    background-color: rgba(255,255,255,.35);
+}
+
 .navbar {
   background-color: #fff;
   font-size: 18px;
