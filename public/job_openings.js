@@ -126,7 +126,7 @@ function submitModal() {
   //alert("After an extensive review, your application has been rejected :(");
 }
 
-function postModal(){
+/* function postModal(){
   
   var modalBackdrop = document.getElementById('modal-background');
   var createAppModal = document.getElementById('job-listing-modal');
@@ -148,7 +148,87 @@ function postModal(){
 		 break;
 		}
 		
+  } */
+  
+  
+  
+  
+  function insertNewJobOpening() {
+
+  var photoURL = document.getElementById('img-url-input').value || '';
+  var jobDescription = document.getElementById('job-description-input').value || '';
+  var jobTitle = document.getElementById('job-title-input').value || '';
+
+  if (photoURL.trim() && jobDescription !== '' && jobTitle !== '') {
+
+
+
+      storeJobListing(jobTitle, photoURL, jobDescription, function (err) {
+
+        if (err) {
+          alert("Unable to save job listing.  Got this error:\n\n" + err);
+        } else {
+
+          var jobListingTemplate = Handlebars.templates.jobListing;
+          var templateArgs = {
+			title: jobTitle,
+            url: photoURL,
+            caption: jobDescription
+          };
+
+          var jobListingHTML = jobListingTemplate(templateArgs);
+         
+
+          var jobListingContainer = document.querySelector('.main_container');
+          jobListingContainer.insertAdjacentHTML('beforeend', jobListingHTML);
+
+        }
+
+      });
+
+
+
+    closeAddListingModal();
+
+  } else {
+
+    alert('You must specify a value for the all fields.');
+
   }
+
+}
+
+
+
+function storeJobListing(jobTitle, url, caption, callback) {
+
+  var postURL = "/Job-Openings/addListing";
+
+  var postRequest = new XMLHttpRequest();
+  postRequest.open('POST', postURL);
+  postRequest.setRequestHeader('Content-Type', 'application/json');
+
+  postRequest.addEventListener('load', function (event) {
+    var error;
+    if (event.target.status !== 200) {
+      error = event.target.response;
+    }
+    callback(error);
+  });
+
+  var postBody = {
+	title: jobTitle,
+    url: url,
+    caption: caption
+  };
+  postRequest.send(JSON.stringify(postBody));
+
+}
+  
+  
+  
+  
+  
   
   if(empty){
 	  alert("Missing Required Field");
