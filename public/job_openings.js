@@ -1,18 +1,3 @@
-/*tion showApplyButtonModal(){
-  	var modalBackdrop = document.getElementById('modal-background');
-  	var createButtonModal = document.querySelector('apply-button-modal');
-	modalBackdrop.classList.remove('hidden');
-	createButtonModal.classList.remove('hidden');
-
-}
-
-function closeApplyButtonModal(){
-  	var modalBackdrop = document.getElementById('modal-background');
-  	var createButtonModal = document.querySelector('apply-button-modal');
-	modalBackdrop.classList.add('hidden');
-	createButtonModal.classList.add('hidden');
-}i*/
-
 function showAddListingModal(){
   	var modalBackdrop = document.getElementById('modal-background');
   	var createButtonModal = document.getElementById('job-listing-modal');
@@ -161,7 +146,9 @@ function submitModal() {
 
   if (photoURL.trim() && jobDescription !== '' && jobTitle !== '') {
 
-
+	console.log("photoURL: ", photoURL);
+	  console.log("jobDescription: ", jobDescription);
+	  console.log("jobTitle:", jobTitle);
 
       storeJobListing(jobTitle, photoURL, jobDescription, function (err) {
 
@@ -186,8 +173,6 @@ function submitModal() {
 
       });
 
-
-
     closeAddListingModal();
 
   } else {
@@ -210,6 +195,7 @@ function storeJobListing(jobTitle, url, caption, callback) {
   console.log("after header request");
   postRequest.addEventListener('load', function (event) {
     var error;
+	  console.log("error code:", event.target.status);
     if (event.target.status !== 200) {
       error = event.target.response;
     }
