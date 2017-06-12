@@ -262,7 +262,7 @@ window.addEventListener('DOMContentLoaded', function () {
 	}
 
   var addListingButton = document.querySelector('.add-listing');
-  addListingButton.addEventListener('click', showAddListingModal);
+  addListingButton.addEventListener('click', insertNewJobOpening);
 
   var modalCloseButton = document.querySelector('#application-modal .modal-close');
 	modalCloseButton.addEventListener('click', closeApplyModal);
