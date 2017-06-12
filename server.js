@@ -18,15 +18,19 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(bodyParser.json());
 
-app.post('/Job-Openings/addPhoto', function (req, res, next) {
-    var job = jobData[req.params.job];
-    if (job) {
+
+
+app.post('/Job-Openings', function (req, res, next) {
+  
+console.log("In job openings post!");	
+//var job = jobData[req.params];
+//console.log("job:", job);
         if (req.body.title && req.body && req.body.url) {
 
             var job = {
                 title: req.body.title,
                 url: req.body.url,
-                caption: req.body.caption
+                description: req.body.description
             };
 
 
@@ -43,9 +47,16 @@ app.post('/Job-Openings/addPhoto', function (req, res, next) {
             res.status(400).send("Job Listing must have all fields filled out.");
         }
 
-    } else {
+    /*} else {
         next();
-    }
+    }*/
+});
+
+app.post('*', function(req,res,next){
+	
+console.log("Request info:", req.method); 
+console.log("Request url:", req.url); 
+console.log("Request headers:", req.headers); 
 });
 
 app.get('/', function (req, res, next) {
@@ -80,6 +91,9 @@ app.get('/About', function (req, res, next) {
 });
 
 app.get('*', function (req, res) {
+
+console.log("Request info:", req.method); 
+
   res.status(404).render('404Page');
 });
 
