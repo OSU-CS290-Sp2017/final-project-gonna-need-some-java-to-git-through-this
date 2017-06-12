@@ -11,29 +11,36 @@ app.set('view engine', 'handlebars');
 var aboutData = require("./aboutData");
 var newsData = require("./newsData");
 var jobData = require("./jobData");
+var newsTitle = "Galactic News";
 
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function (req, res, next) {
-	res.render('home');
+    var templateArgs = {
+        pageTitle: "The Galactic Empire"
+    };
+	res.render('home', templateArgs);
 });
 
 app.get('/News', function (req, res, next) {
-	var templateArgs = {
+    var templateArgs = {
+        pageTitle: "Galactic News",
 		articles: newsData
 	};
 	res.render('news', templateArgs);
 });
 
 app.get('/Job-Openings', function (req, res, next) {
-	var templateArgs = {
+    var templateArgs = {
+        pageTitle: "Job Openings",
 		jobs: jobData
 	};
 	res.render('job_openings', templateArgs);
 });
 
 app.get('/About', function (req, res, next) {
-	var templateArgs = {
+    var templateArgs = {
+        pageTitle: "About Us",
 		people: aboutData
 	};
 	res.render('about', templateArgs);
