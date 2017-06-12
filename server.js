@@ -12,25 +12,25 @@ var aboutData = require("./aboutData");
 var newsData = require("./newsData");
 var jobData = require("./jobData");
 
-app.getapp.get('/', function (req, res, next) {
+app.get('/', function (req, res, next) {
 	res.render('home');
 });
 
-app.getapp.get('/News', function (req, res, next) {
+app.get('/News', function (req, res, next) {
 	var templateArgs = {
 		articles: newsData
 	};
 	res.render('news', templateArgs);
 });
 
-app.getapp.get('/Job-Openings', function (req, res, next) {
+app.get('/Job-Openings', function (req, res, next) {
 	var templateArgs = {
 		jobs: jobData
 	};
 	res.render('job_openings', templateArgs);
 });
 
-app.getapp.get('/About', function (req, res, next) {
+app.get('/About', function (req, res, next) {
 	var templateArgs = {
 		people: aboutData
 	};
