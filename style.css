@@ -78,7 +78,13 @@ h2 {
 
 .error-container{
     display: block;
-    
+    width: 40%;
+    min-width: 200px;
+    margin: auto;
+}
+
+.error-container h2{
+    padding: 0;
 }
 
 .job_listing {
