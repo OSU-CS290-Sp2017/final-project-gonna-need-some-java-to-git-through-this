@@ -181,8 +181,8 @@ window.addEventListener('DOMContentLoaded', function () {
   		applyButton[j].addEventListener('click', showApplyModal);
 	}
 
- // var addListingButton = document.querySelector('.add-listing');
- // addListingButton.addEventListener('click', showAddListingModal);
+  var addListingButton = document.querySelector('.add-listing');
+  addListingButton.addEventListener('click', showAddListingModal);
 
   var modalCloseButton = document.querySelector('#application-modal .modal-close');
 	modalCloseButton.addEventListener('click', closeApplyModal);
