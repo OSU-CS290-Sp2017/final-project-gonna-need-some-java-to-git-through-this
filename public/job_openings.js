@@ -104,9 +104,9 @@ function submitModal() {
 	alert("After an extensive review, your application has been rejected :("); 
   }
   
-  clearInputValues();
+  //clearInputValues();
 
-  alert("After an extensive review, your application has been rejected :(");
+  //alert("After an extensive review, your application has been rejected :(");
 }
 
 function storeJobListing(jobTitle, url, caption, callback) {
